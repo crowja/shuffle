@@ -1,6 +1,6 @@
 /**
  *  @file shuffle.c
- *  @version 0.0.2-dev0
+ *  @version 0.0.3-dev0
  *  @date Fri Dec  6 11:02:37 CST 2019
  *  @copyright %COPYRIGHT%
  *  @brief FIXME
@@ -50,15 +50,11 @@ _random_int(int a, int b)
    return a + (1 + b - a) * u;
 }
 
-/*** shuffle_version() ***/
-
 const char *
 shuffle_version(void)
 {
-   return "0.0.2-dev0";
+   return "0.0.3-dev0";
 }
-
-/*** shuffle_array() ***/
 
 int
 shuffle_array(void *base, size_t nmemb, size_t size)
