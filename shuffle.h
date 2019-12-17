@@ -1,10 +1,8 @@
 /**
  *  @file shuffle.h
  *  @version 0.0.3-dev0
- *  @date Fri Dec  6 11:02:37 CST 2019
+ *  @date Mon Dec 16 22:38:05 CST 2019
  *  @copyright %COPYRIGHT%
- *  @brief FIXME
- *  @details FIXME
  */
 
 #ifndef _SHUFFLE_H_
@@ -15,16 +13,20 @@
 #endif
 #define _PACKAGE_NAME "shuffle"
 
-int         shuffle_func1(const char *cp);
-
 /**
  *  @brief Return the version of this package.
- *  @details FIXME longer description here ...
  */
 
 const char *shuffle_version(void);
 
-int         shuffle_array(void *base, size_t nmemb, size_t size);
+/**
+ *  @brief Shuffle an array.
+ *  @param[in, out] base: Pointer to the base of the array. Shuffled on return.
+ *  @param[in] nmemb. Number of members in the array. 
+ *  @param[in] size. Size in bytes of each member of the array. 
+ *  @returns 0.
+ */
 
+int         shuffle_array(void *base, size_t nmemb, size_t size);
 
 #endif
