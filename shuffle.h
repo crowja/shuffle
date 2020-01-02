@@ -2,7 +2,8 @@
  *  @file shuffle.h
  *  @version 0.0.3-dev0
  *  @date Mon Dec 16 22:38:05 CST 2019
- *  @copyright %COPYRIGHT%
+ *  @copyright 2020 John A. Crow <crowja@gmail.com>
+ *  @license Unlicense <http://unlicense.org/>
  */
 
 #ifndef _SHUFFLE_H_
