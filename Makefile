@@ -69,8 +69,8 @@ indent: stamp
 	done
 
 stamp:
-	@bash stamper.bash shuffle.c
-	@bash stamper.bash shuffle.h
+	@stamper.bash shuffle.c
+	@stamper.bash shuffle.h
 
 clean:
 	@/bin/rm -f shuffle.o *.o *~ *.BAK *.bak core.* a.out
