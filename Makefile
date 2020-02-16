@@ -9,6 +9,7 @@ LDFLAGS =
 LDFLAGS_EFENCE = -L/usr/lib -lefence $(LDFLAGS)
 #VALGRIND_FLAGS = --verbose --leak-check=full --undef-value-errors=yes --track-origins=yes
 VALGRIND_FLAGS = --leak-check=full --undef-value-errors=yes
+STAMPER = stamper
 
 INDENT_FLAGS = -TFILE -Tsize_t -Tuint8_t
 
@@ -60,7 +61,7 @@ echeck: shuffle.o
 	  && ( LD_PRELOAD=libefence.so t/a.out ) ; \
 	done 
 
-indent: stamp
+indent:
 	@indent $(INDENT_FLAGS) shuffle.c
 	@indent $(INDENT_FLAGS) shuffle.h
 	@for i in $(TESTS); \
@@ -69,8 +70,8 @@ indent: stamp
 	done
 
 stamp:
-	@stamper.bash shuffle.c
-	@stamper.bash shuffle.h
+	@$(STAMPER) shuffle.c
+	@$(STAMPER) shuffle.h
 
 clean:
 	@/bin/rm -f shuffle.o *.o *~ *.BAK *.bak core.* a.out

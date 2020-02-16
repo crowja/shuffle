@@ -1,18 +1,13 @@
 /**
  *  @file shuffle.h
- *  @version 0.0.3-dev0
- *  @date Mon Dec 16 22:38:05 CST 2019
+ *  @version 0.1.0-dev0
+ *  @date Sun Feb 16, 2020 05:01:16 PM CST
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
 
-#ifndef _SHUFFLE_H_
-#define _SHUFFLE_H_
-
-#ifdef  _PACKAGE_NAME
-#undef  _PACKAGE_NAME
-#endif
-#define _PACKAGE_NAME "shuffle"
+#ifndef SHUFFLE_H
+#define SHUFFLE_H
 
 /**
  *  @brief Return the version of this package.

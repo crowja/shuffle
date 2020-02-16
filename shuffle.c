@@ -1,7 +1,7 @@
 /**
  *  @file shuffle.c
- *  @version 0.0.3-dev0
- *  @date Mon Dec 16 22:38:05 CST 2019
+ *  @version 0.1.0-dev0
+ *  @date Sun Feb 16, 2020 05:01:16 PM CST
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
@@ -10,25 +10,15 @@
 #include <stdio.h>
 #include "shuffle.h"
 
-#ifdef  _IS_NULL
-#undef  _IS_NULL
-#endif
-#define _IS_NULL(p)   ((NULL == (p)) ? (1) : (0))
-
-#ifdef  _FREE
-#undef  _FREE
-#endif
-#define _FREE(p)      ((NULL == (p)) ? (0) : (free((p)), (p) = NULL))
-
 /**
  *  Byte-wise swap two items of size <size>.
  *  Swiped from https://code.woboq.org/userspace/glibc/stdlib/qsort.c.html.
  *  See also http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.14.8162&rep=rep1&type=pdf.
  */
-#ifdef  _SWAP
-#undef  _SWAP
+#ifdef  SWAP
+#undef  SWAP
 #endif
-#define _SWAP(a, b, size)             \
+#define SWAP(a, b, size)             \
   do                                  \
     {                                 \
       size_t __size = (size);         \
@@ -52,7 +42,7 @@ _random_int(int a, int b)
 const char *
 shuffle_version(void)
 {
-   return "0.0.3-dev0";
+   return "0.1.0-dev0";
 }
 
 int
@@ -65,11 +55,8 @@ shuffle_array(void *base, size_t nmemb, size_t size)
 
    for (i = 0; i < nmemb - 1; i++) {
       unsigned    j = _random_int(i, nmemb - 1);
-      _SWAP(basep + i * sizeof(char *), basep + j * sizeof(char *), size);
+      SWAP(basep + i * sizeof(char *), basep + j * sizeof(char *), size);
    }
 
    return 0;
 }
-
-#undef _IS_NULL
-#undef _FREE
