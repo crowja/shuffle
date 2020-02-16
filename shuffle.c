@@ -1,6 +1,6 @@
 /**
  *  @file shuffle.c
- *  @version 0.1.0-dev0
+ *  @version 0.1.1-dev0
  *  @date Sun Feb 16, 2020 05:01:16 PM CST
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
@@ -42,7 +42,7 @@ _random_int(int a, int b)
 const char *
 shuffle_version(void)
 {
-   return "0.1.0-dev0";
+   return "0.1.1-dev0";
 }
 
 int
